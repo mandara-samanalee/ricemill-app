@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { login } from "./server"
+import { login } from "./login.actions"
 import { WreathPattern } from "@/components/shared/WreathPattern"
 
 export default function LoginPage({
