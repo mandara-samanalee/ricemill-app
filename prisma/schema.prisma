@@ -28,3 +28,57 @@ enum Role {
   ADMIN
   STAFF
 }
+
+//////////////////////////////////////
+model RiceOrder {
+  id              String          @id @default(cuid())
+  date            DateTime
+  customerName    String
+  customerAddress String?
+  customerPhone   String?
+  note            String?
+  totalPrice      Float
+  items           RiceOrderItem[]
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+
+  @@map("rice_orders")
+}
+
+model RiceOrderItem {
+  id          String      @id @default(cuid())
+  orderId     String
+  order       RiceOrder   @relation(fields: [orderId], references: [id])
+  riceType    RiceType
+  packageType PackageType
+  quantity    Int         // package count
+  totalSize   Float       // size in kg
+  totalPrice  Float
+
+  @@map("rice_order_items")
+}
+
+model Pricing {
+  id          Int         @id @default(autoincrement())
+  riceType    RiceType
+  packageType PackageType
+  price       Float
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+
+  @@unique([riceType, packageType])
+  @@map("pricing")
+}
+
+enum RiceType {
+  TRIPLE
+  DOUBLE
+  SINGLE
+}
+
+enum PackageType {
+  KG_5
+  KG_10
+  KG_25
+  KG_50
+}

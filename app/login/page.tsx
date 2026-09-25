@@ -19,6 +19,7 @@ export default function LoginPage({
             width={248}
             height={248}
             className="object-contain"
+            style={{ width: "auto", height: "auto" }}
             priority
             unoptimized
           />

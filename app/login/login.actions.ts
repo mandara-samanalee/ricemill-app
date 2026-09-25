@@ -2,7 +2,7 @@
 
 import { redirect } from "next/navigation"
 import { loginSchema } from "@/lib/validators/authSchema"
-import { verifyCredentials } from "@/lib/services/authService"
+import { verifyCredentials } from "@/lib/services/auth/authService"
 import { createSession } from "@/lib/auth/session"
 
 export async function login(formData: FormData) {
