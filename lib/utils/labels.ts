@@ -10,3 +10,8 @@ export const packageTypeLabels: Record<string, string> = {
   KG_25: "25 kg",
   KG_50: "50 kg",
 }
+
+export const paddyTypeLabels: Record<string, string> = {
+  DRY: "Dry",
+  WET: "Wet",
+}

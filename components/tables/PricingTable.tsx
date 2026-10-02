@@ -1,5 +1,5 @@
 import { riceTypeLabels, packageTypeLabels } from "@/lib/utils/labels"
-import { PriceCell } from "./PriceCell"
+import { PriceCell } from "../pricing/PriceCell"
 
 type PricingGrid = {
   riceType: string
@@ -10,7 +10,7 @@ export function PricingTable({ grid }: { grid: PricingGrid }) {
   const packageTypes = grid[0]?.packages.map((p) => p.packageType) ?? []
 
   return (
-    <div className="border border-line rounded-lg overflow-hidden bg-white/40">
+    <div className="border border-line rounded-lg overflow-hidden overflow-x-auto">
       <table className="w-full">
         <thead>
            <tr className="bg-ink/[0.035] border-b border-line">

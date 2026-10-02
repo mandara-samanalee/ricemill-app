@@ -1,5 +1,5 @@
 import { getPricingGrid } from "@/lib/services/pricing/pricingService"
-import { PricingTable } from "@/components/pricing/PricingTable"
+import { PricingTable } from "@/components/tables/PricingTable"
 
 export default async function PricingPage() {
   const grid = await getPricingGrid()

@@ -7,10 +7,10 @@ import { LayoutDashboard, Receipt, Wheat, Tag, LogOut } from "lucide-react"
 import { logout } from "@/app/login/login.actions"
 
 const navItems = [
-  { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
-  { href: "/dashboard/orders", label: "Rice Orders", icon: Receipt },
-  { href: "/dashboard/paddy", label: "Paddy Stock", icon: Wheat },
-  { href: "/dashboard/pricing", label: "Pricing", icon: Tag },
+  { href: "/", label: "Dashboard", icon: LayoutDashboard },
+  { href: "/orders", label: "Rice Orders", icon: Receipt },
+  { href: "/paddy", label: "Paddy Stock", icon: Wheat },
+  { href: "/pricing", label: "Pricing", icon: Tag },
 ]
 
 export function Sidebar({ username }: { username: string }) {
@@ -33,8 +33,8 @@ export function Sidebar({ username }: { username: string }) {
       <nav className="flex-1 px-3 space-y-1">
         {navItems.map((item) => {
           const isActive =
-            item.href === "/dashboard"
-              ? pathname === "/dashboard"
+            item.href === "/"
+              ? pathname === "/"
               : pathname.startsWith(item.href)
           const Icon = item.icon
 

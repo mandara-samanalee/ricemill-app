@@ -82,3 +82,25 @@ enum PackageType {
   KG_25
   KG_50
 }
+
+////////////////////////////////
+model PaddyEntry {
+  id           String     @id @default(cuid())
+  date         DateTime
+  customerName String
+  area         String
+  phoneNumber  String?
+  paddyType    PaddyType
+  amountKg     Float
+  pricePerKg   Float
+  totalPrice   Float
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+
+  @@map("paddy_entries")
+}
+
+enum PaddyType {
+  DRY
+  WET
+}

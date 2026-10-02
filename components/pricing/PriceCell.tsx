@@ -2,7 +2,7 @@
 
 import { useState, useTransition, useRef, useEffect } from "react"
 import { X } from "lucide-react"
-import { updatePrice, removePrice } from "@/app/dashboard/pricing/pricing.actions"
+import { updatePrice, removePrice } from "@/app/(dashboard)/pricing/pricing.actions"
 
 export function PriceCell({
   riceType,

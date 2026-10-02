@@ -22,7 +22,7 @@ export async function login(formData: FormData) {
   }
 
   await createSession(user.id)
-  redirect("/dashboard")
+  redirect("/paddy")
 }
 
 export async function logout() {

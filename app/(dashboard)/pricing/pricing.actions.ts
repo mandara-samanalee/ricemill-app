@@ -16,7 +16,7 @@ export async function updatePrice(formData: FormData) {
   }
 
   await upsertPrice(parsed.data.riceType, parsed.data.packageType, parsed.data.price)
-  revalidatePath("/dashboard/pricing")
+  revalidatePath("/pricing")
   return { success: true }
 }
 

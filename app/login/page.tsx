@@ -16,9 +16,9 @@ export default function LoginPage({
           <Image
             src="/logo.png"
             alt="RM Rice Mill"
-            width={248}
-            height={248}
-            className="object-contain"
+            width={216}
+            height={216}
+            className="-mb-6 object-contain"
             style={{ width: "auto", height: "auto" }}
             priority
             unoptimized
