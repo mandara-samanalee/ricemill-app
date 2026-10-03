@@ -37,6 +37,8 @@ model RiceOrder {
   customerAddress String?
   customerPhone   String?
   note            String?
+  totalPackages   Int
+  totalSize       Float
   totalPrice      Float
   items           RiceOrderItem[]
   createdAt       DateTime        @default(now())
@@ -48,7 +50,7 @@ model RiceOrder {
 model RiceOrderItem {
   id          String      @id @default(cuid())
   orderId     String
-  order       RiceOrder   @relation(fields: [orderId], references: [id])
+  order       RiceOrder   @relation(fields: [orderId], references: [id], onDelete: Cascade)
   riceType    RiceType
   packageType PackageType
   quantity    Int         // package count
