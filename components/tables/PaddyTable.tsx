@@ -31,7 +31,7 @@ export function PaddyTable({ entries }: { entries: PaddyEntry[] }) {
 
   return (
     <div className="border border-line rounded-lg overflow-hidden overflow-x-auto">
-      <table className="w-full min-w-[900px]">
+      <table className="w-full min-w-[1000px]">
         <thead>
           <tr className="bg-ink/[0.035] border-b border-line">
             <th className="text-left text-xs font-semibold text-ink/70 uppercase tracking-wide px-5 py-3.5">
@@ -39,6 +39,9 @@ export function PaddyTable({ entries }: { entries: PaddyEntry[] }) {
             </th>
             <th className="text-left text-xs font-semibold text-ink/70 uppercase tracking-wide px-3 py-3.5">
               Customer
+            </th>
+            <th className="text-left text-xs font-semibold text-ink/70 uppercase tracking-wide px-3 py-3.5">
+              Phone
             </th>
             <th className="text-left text-xs font-semibold text-ink/70 uppercase tracking-wide px-3 py-3.5">
               Area
@@ -77,6 +80,9 @@ export function PaddyTable({ entries }: { entries: PaddyEntry[] }) {
               </td>
               <td className="px-3 py-3 text-sm text-ink font-medium whitespace-nowrap">
                 {entry.customerName}
+              </td>
+              <td className="px-3 py-3 text-sm text-ink/70 whitespace-nowrap">
+                {entry.phoneNumber || "—"}
               </td>
               <td className="px-3 py-3 text-sm text-ink/70 whitespace-nowrap">{entry.area}</td>
               <td className="px-3 py-3">

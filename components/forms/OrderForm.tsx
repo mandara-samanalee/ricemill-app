@@ -144,14 +144,13 @@ export function OrderForm({
             required
             defaultValue={initialData?.customerName}
             className="w-full bg-white border border-line rounded-md px-3 py-2.5 text-sm text-ink outline-none focus:border-paddy transition-colors"
-            placeholder="e.g. K. Perera"
           />
         </div>
 
         <div className="grid grid-cols-2 gap-4">
           <div>
             <label htmlFor="customerAddress" className="block text-sm font-medium text-ink mb-1.5">
-              Address <span className="text-muted/60 font-normal">(optional)</span>
+              Address 
             </label>
             <input
               id="customerAddress"
@@ -159,12 +158,11 @@ export function OrderForm({
               type="text"
               defaultValue={initialData?.customerAddress ?? ""}
               className="w-full bg-white border border-line rounded-md px-3 py-2.5 text-sm text-ink outline-none focus:border-paddy transition-colors"
-              placeholder="e.g. Colombo"
             />
           </div>
           <div>
             <label htmlFor="customerPhone" className="block text-sm font-medium text-ink mb-1.5">
-              Phone Number <span className="text-muted/60 font-normal">(optional)</span>
+              Phone Number 
             </label>
             <input
               id="customerPhone"

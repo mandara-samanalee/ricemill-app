@@ -2,11 +2,13 @@ import Image from "next/image"
 import { login } from "./login.actions"
 import { WreathPattern } from "@/components/shared/WreathPattern"
 
-export default function LoginPage({
+export default async function LoginPage({
   searchParams,
 }: {
-  searchParams: { error?: string }
+  searchParams: Promise<{ error?: string }>
 }) {
+  const { error } = await searchParams
+
   return (
     <div className="min-h-screen flex flex-col md:flex-row">
       {/* Brand panel */}
@@ -72,7 +74,7 @@ export default function LoginPage({
               />
             </div>
 
-            {searchParams?.error && (
+            {error && (
               <p className="text-accent-red text-sm">
                 Incorrect username or password.
               </p>

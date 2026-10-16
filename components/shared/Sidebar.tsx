@@ -3,21 +3,22 @@
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
-import { LayoutDashboard, Receipt, Wheat, Tag, LogOut } from "lucide-react"
+import { LayoutDashboard, Receipt, Wheat, Tag, LogOut, FileBarChart } from "lucide-react"
 import { logout } from "@/app/login/login.actions"
 
 const navItems = [
-  { href: "/", label: "Dashboard", icon: LayoutDashboard },
+  { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
   { href: "/orders", label: "Rice Orders", icon: Receipt },
   { href: "/paddy", label: "Paddy Stock", icon: Wheat },
   { href: "/pricing", label: "Pricing", icon: Tag },
+  { href: "/reports", label: "Reports", icon: FileBarChart },
 ]
 
 export function Sidebar({ username }: { username: string }) {
   const pathname = usePathname()
 
   return (
-    <aside className="w-66 shrink-0 bg-sidebar flex flex-col h-screen sticky top-0">
+    <aside className="w-66 shrink-0 bg-sidebar flex flex-col h-screen sticky top-0 print:hidden">
       <div className="flex items-center gap-2.5 px-5 py-6">
         <Image
           src="/logo.png"

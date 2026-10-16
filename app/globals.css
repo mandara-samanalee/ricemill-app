@@ -44,3 +44,14 @@ body {
 body {
   background-color: var(--color-paper);
 }
+
+@media print {
+  @page {
+    size: landscape;
+    margin: 14mm;
+  }
+
+  body {
+    background: white;
+  }
+}
