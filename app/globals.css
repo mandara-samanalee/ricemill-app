@@ -38,8 +38,20 @@ body {
   --color-paper: #FBF9F3;
   --color-muted: #6B655A;
   --color-line: #E3DDC9;
+  --color-sidebar: #16241B;
 }
 
 body {
   background-color: var(--color-paper);
+}
+
+@media print {
+  @page {
+    size: landscape;
+    margin: 14mm;
+  }
+
+  body {
+    background: white;
+  }
 }
